@@ -1,0 +1,67 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'frankier/neovim-colors-solarized-truecolor-only'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'colorscheme' : 'solarized', 
+      \ 'active' : {
+      \   'left' : [ [ 'mode', 'paste' ], 
+      \              [ 'readonly', 'fugitive', 'filename', 'modified', 'anzu']], 
+      \   'right' : [ [ 'syntastic', 'lineinfo' ], 
+      \               [ 'percent' ], 
+      \               [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ }, 
+      \ 'component' : {
+      \   'readonly' : '%{&filetype=="help"?"":&readonly?"\ue0a2":""}',
+      \   'modified' : '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+      \ }, 
+      \ 'component_function' : {
+      \   'mode' : 'MyMode', 
+      \   'fugitive' : 'MyFugitive', 
+      \   'anzu' : 'anzu#search_status'
+      \ }, 
+      \ 'component_expand' : {
+      \   'syntastic' : 'SyntasticStatuslineFlag', 
+      \ }, 
+      \ 'component_type' : {
+      \   'syntastic' : 'error', 
+      \ }, 
+      \ 'component_visible_condition': {
+      \   'readonly' : '(&filetype!="help" && &readonly)', 
+      \   'modified' : '(&filetype!="help" && (&modified||!&modifiable))'
+      \ }, 
+      \ 'separator' : { 'left' : "\ue0b0", 'right' : "\ue0b2" },
+      \ 'subseparator' : { 'left' : "\ue0b1", 'right' : "\ue0b3" },
+      \ }
+
+function! MyMode()
+  return &ft == 'unite' ? 'Unite' : 
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! MyFugitive()
+  if exists('*fugitive#head')
+    let _ = fugitive#head()
+    return strlen(_) ? "\ue0a0 " . _ : ''
+  endif
+  return ''
+endfunction
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'

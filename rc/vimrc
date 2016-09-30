@@ -1,0 +1,73 @@
+
+if &compatible
+  set nocompatible
+endif
+
+let g:vimdir = fnamemodify(resolve(expand('<sfile>')), ':h')
+function! s:source_rc(path)
+  execute 'source' . g:vimdir . '/' . a:path
+endfunction
+
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+
+if has('vim_starting')
+  call s:source_rc('init.vim')
+endif
+
+call s:source_rc('dein.vim')
+
+if !has('vim_starting')
+  call dein#call_hook('source')
+  call dein#call_hook('post_source')
+endif
+
+syntax enable
+filetype plugin indent on
+
+"--------------------------------------------------------------------------------
+" Search:
+"
+
+set ignorecase
+set smartcase
+
+set incsearch
+set hlsearch
+set wrapscan
+
+"--------------------------------------------------------------------------------
+" Encoding:
+"
+
+call s:source_rc('encoding.vim')
+
+"--------------------------------------------------------------------------------
+" Edit:
+"
+
+call s:source_rc('edit.vim')
+
+"--------------------------------------------------------------------------------
+" View:
+"
+
+call s:source_rc('view.vim')
+
+"--------------------------------------------------------------------------------
+" FileType:
+"
+
+call s:source_rc('filetype.vim')
+
+"--------------------------------------------------------------------------------
+" Mappings:
+
+call s:source_rc('mappings.vim')
+
+
+
+set secure
+
