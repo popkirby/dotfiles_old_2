@@ -15,7 +15,7 @@ repo = 'cespare/vim-toml'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
-      \ 'colorscheme' : 'solarized', 
+      \ 'colorscheme' : 'chiery', 
       \ 'active' : {
       \   'left' : [ [ 'mode', 'paste' ], 
       \              [ 'readonly', 'fugitive', 'filename', 'modified', 'anzu']], 

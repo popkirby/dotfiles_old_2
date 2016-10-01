@@ -82,7 +82,8 @@ if &term =~ 'screen'
   let &t_8b="\033[48;2;%lu;%lu;%lum"
 endif
 
-colorscheme solarized
+" colorscheme solarized
+colorscheme chiery
 
 syntax enable
 
