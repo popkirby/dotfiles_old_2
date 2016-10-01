@@ -27,14 +27,14 @@ let s:purple = '#b34dbb'
 let s:p.normal.middle = [ [s:dark1, s:light1, 0, 0] ]
 let s:p.normal.left   = [ [s:light0, s:green, 0, 0],
                         \ [s:light1, s:dark1, 0, 0] ]
-let s:p.normal.right  = [ [s:dark1, s:light1, 0, 0],
-                        \ [s:dark1, s:light1, 0, 0] ]
+let s:p.normal.right  = [ [s:light1, s:dark1, 0, 0],
+                        \ [s:light1, s:dark1, 0, 0] ]
 
-let s:p.inactive.middle = [ [s:dark1, s:light0, 0, 0] ]
-let s:p.inactive.left   = [ [s:dark1, s:light0, 0, 0],
-                          \ [s:dark1, s:light0, 0, 0] ]
-let s:p.inactive.right  = [ [s:dark1, s:light0, 0, 0],
-                          \ [s:dark1, s:light0, 0, 0] ]
+let s:p.inactive.middle = [ [s:dark1, s:light1, 0, 0] ]
+let s:p.inactive.left   = [ [s:dark1, s:light1, 0, 0],
+                          \ [s:dark1, s:light1, 0, 0] ]
+let s:p.inactive.right  = [ [s:dark1, s:light1, 0, 0],
+                          \ [s:dark1, s:light1, 0, 0] ]
 
 let s:p.insert.left = [ [s:light0, s:blue, 0, 0],
                       \ s:p.normal.left[1]]
