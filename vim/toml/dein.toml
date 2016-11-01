@@ -61,7 +61,7 @@ endfunction
 '''
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
+repo = 'neomake/neomake'

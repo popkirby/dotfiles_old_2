@@ -14,3 +14,8 @@ alias sl='ls'
 function mkdcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
+
+function frepo {
+  local dir
+  dir=$(ghq list > /dev/null | fzf --reverse +m) && cd $(ghq root)/$dir
+}
