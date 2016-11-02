@@ -30,10 +30,10 @@ let g:lightline = {
       \ 'component_function' : {
       \   'mode' : 'MyMode', 
       \   'fugitive' : 'MyFugitive', 
-      \   'anzu' : 'anzu#search_status'
+      \   'anzu' : 'anzu#search_status',
+      \   'syntastic' : 'neomake#statusline#LoclistStatus',
       \ }, 
       \ 'component_expand' : {
-      \   'syntastic' : 'SyntasticStatuslineFlag', 
       \ }, 
       \ 'component_type' : {
       \   'syntastic' : 'error', 
@@ -65,3 +65,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'neomake/neomake'
+hook_add = '''
+autocmd MyAutoCmd BufWinEnter,BufWritePost * Neomake
+'''
