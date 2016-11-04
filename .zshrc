@@ -38,3 +38,7 @@ if [[ -f ~/.zplug/init.zsh ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if (which zprof > /dev/null); then
+  zprof > ~/zsh.log
+fi

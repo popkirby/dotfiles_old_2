@@ -22,6 +22,7 @@ set scrolloff=5
 
 set laststatus=2
 set cmdheight=2
+set signcolumn=yes
 set showcmd
 set showmode
 set showtabline=2

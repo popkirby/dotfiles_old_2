@@ -1,3 +1,5 @@
+# zmodload zsh/zprof && zprof
+
 if [[ -z $DOTPATH ]]; then
   _get_dotpath() {
     local d
