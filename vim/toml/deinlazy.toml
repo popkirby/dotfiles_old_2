@@ -57,7 +57,7 @@ on_ft = ['typescript']
 [[plugins]]
 repo = 'ternjs/tern_for_vim'
 on_ft = ['javascript']
-build = 'npm install'
+build = 'which npm && npm install'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
