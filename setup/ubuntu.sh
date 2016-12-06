@@ -15,3 +15,4 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 brew install gcc git zsh tmux
 brew install vim --with-lua --with-luajit --override-system-vi --HEAD
 
+curl -sL zplug.sh/installer | zsh
