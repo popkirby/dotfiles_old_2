@@ -2,7 +2,7 @@
 
 . "$DOTPATH"/etc/lib/util.sh
 
-is_ssh_running && exit
+# is_ssh_running && exit
 
 if is_screen_or_tmux_running; then
   if is_tmux_running; then
