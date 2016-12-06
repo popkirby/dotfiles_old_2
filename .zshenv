@@ -70,6 +70,8 @@ if [[ $UID == 0 ]]; then
   export SAVEHIST=0
 fi
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 # pyenv
 if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)"

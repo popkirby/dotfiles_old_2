@@ -11,10 +11,11 @@ autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=0 noexpandtab
 
 " JavaScript
 let g:syntastic_javascript_checkers = ['eslint']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['standard', 'eslint']
+let g:neomake_jsx_enabled_makers = ['standard', 'eslint']
 
 autocmd FileType javascript let b:neomake_javascript_eslint_exe = s:nwhich('eslint')
+autocmd FileType javascript let b:neomake_javascript_standard_exe = s:nwhich('standard')
 
 let s:rootpath = fnamemodify('/', ':p')
 let s:homepath = fnamemodify('~/', ':p')

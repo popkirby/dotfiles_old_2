@@ -47,6 +47,14 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
+
+[[plugins]]
 repo = 'ternjs/tern_for_vim'
 on_ft = ['javascript']
 build = 'npm install'

@@ -15,3 +15,8 @@ inoremap <expr><C-h> neocomplete#smart_close_popup() . "\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup() . "\<C-h>"
 inoremap <expr><Space> (pumvisible() ? "\<C-y>" : "") . "\<Space>"
 
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w::'

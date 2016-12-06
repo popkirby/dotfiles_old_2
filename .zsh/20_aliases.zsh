@@ -17,5 +17,5 @@ function mkdcd {
 
 function frepo {
   local dir
-  dir=$(ghq list > /dev/null | fzf --reverse +m) && cd $(ghq root)/$dir
+  dir=$(ghq list > /dev/null | fzf --reverse +m --query="$1") && cd $(ghq root)/$dir
 }
