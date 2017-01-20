@@ -34,10 +34,12 @@ if [[ -f ~/.zplug/init.zsh ]]; then
     fi
   fi
 
-  zplug load --verbose
+  zplug load
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+setopt prompt_subst
 
 if (which zprof > /dev/null); then
   zprof > ~/zsh.log
