@@ -1,0 +1,17 @@
+#compdef t2del
+
+_t2del() {
+  local _jobs
+
+  _arguments \
+    '*: :->jobs'
+
+  case $state in
+    jobs)
+      _jobs=$(t2stat | grep '\<[0-9]' | cut -d " " -f1)
+      if [[ $_jobs != "" ]]; then
+        _values 'jobs' $_jobs
+      fi
+      ;;
+  esac
+}

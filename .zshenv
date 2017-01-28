@@ -18,7 +18,7 @@ fi
 # fpath
 typeset -gx -U fpath
 fpath=(\
-  ~/.zsh/Completion(N-/) \
+  ~/.zsh/completions(N-/) \
   ~/.zsh/functions(N-/) \
   ~/.zsh/plugins/zsh-completions(N-/) \
   /usr/local/share/zsh/site-functions(N-/) \
@@ -72,6 +72,14 @@ fi
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
+# tsubame
+if [[ `hostname` == "t2a006170" ]]; then
+  export http_proxy=http://proxy.noc.titech.ac.jp:3128
+  export https_proxy=http://proxy.noc.titech.ac.jp:3128
+
+  export LD_LIBRARY_PATH=/usr/apps.sp3/cuda/7.5/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+fi
+
 # pyenv
 if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)"
@@ -80,6 +88,8 @@ fi
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
+
+export PATH=$HOME/.local/bin:$PATH
 
 # rbenv
 if which rbenv > /dev/null; then

@@ -21,6 +21,19 @@ is_osx() {
   fi
 }
 
+is_linux() {
+  os_detect
+  if [ "$PLATFORM" = "linux" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+is_tsubame() {
+  [[ ! -z `cat /etc/motd | grep TSUBAME` ]]
+}
+
 is_ssh_running() {
   [ ! -z "$SSH_CLIENT" ]
 }

@@ -10,6 +10,7 @@ if is_screen_or_tmux_running; then
   fi
 else
 #  if ! is_ssh_running; then
+if ! is_tsubame; then
     if ! has "tmux"; then
       echo "tmux not found" 1>&2
       exit 1
@@ -42,6 +43,6 @@ else
     else
       tmux new-session && echo "tmux created new session"
     fi
-#  fi
+  fi
 fi
         
