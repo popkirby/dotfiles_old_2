@@ -17,6 +17,8 @@ let g:neomake_jsx_enabled_makers = ['standard', 'eslint']
 autocmd FileType javascript let b:neomake_javascript_eslint_exe = s:nwhich('eslint')
 autocmd FileType javascript let b:neomake_javascript_standard_exe = s:nwhich('standard')
 
+autocmd FileType python setlocal omnifunc=python3complete#Complete
+
 let s:rootpath = fnamemodify('/', ':p')
 let s:homepath = fnamemodify('~/', ':p')
 
@@ -35,3 +37,11 @@ function! s:nwhich(cmd)
 
   return a:cmd
 endfunction
+
+let g:vimtex_disable_version_warning = 1
+
+augroup MyAutoCmd
+  autocmd BufWritePre *.tex %s/。/．/ge
+  autocmd BufWritePre *.tex %s/、/，/ge
+augroup END
+

@@ -28,6 +28,7 @@ fpath=(\
 # path
 typeset -gx -U path
 path=(\
+  /Library/TeX/texbin(N-/) \
   ~/.nodebrew/current/bin(N-/) \
   /usr/local/bin(N-/) \
   ${ANDROID_HOME}/tools(N-/) \

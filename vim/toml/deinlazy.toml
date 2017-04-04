@@ -66,3 +66,10 @@ on_ft = ['rust']
 [[plugins]]
 repo = 'racer-rust/vim-racer'
 on_ft = ['rust']
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex', 'bib']
+hook_source = '''
+  execute 'source ' . g:vimdir . '/plugins/vimtex.vim'
+'''
