@@ -18,6 +18,9 @@ export ENHANCD_FILTER="fzf:$ENHANCD_FILTER"
 # Exit if called from vim
 [[ -n $VIMRUNTIME ]] && return
 
+# Exit if called from Steam
+[[ -n $SteamAppUser ]] && return
+
 # automatically attach tmux session
 $DOTPATH/bin/tmuxx
 

@@ -44,4 +44,3 @@ augroup MyAutoCmd
   autocmd BufWritePre *.tex %s/。/．/ge
   autocmd BufWritePre *.tex %s/、/，/ge
 augroup END
-

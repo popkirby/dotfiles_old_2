@@ -31,6 +31,7 @@ path=(\
   /Library/TeX/texbin(N-/) \
   ~/.nodebrew/current/bin(N-/) \
   /usr/local/bin(N-/) \
+  /Library/TeX/texbin(N-/) \
   ${ANDROID_HOME}/tools(N-/) \
   ${ANDROID_HOME}/platform-tools(N-/) \
   $path \
