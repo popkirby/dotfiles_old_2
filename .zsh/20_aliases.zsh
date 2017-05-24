@@ -37,3 +37,14 @@ function venv {
   venv_dir=$HOME/.venv
   env=$(command ls $venv_dir | fzf) && source $venv_dir/$env/bin/activate
 }
+
+function s {
+  local opt
+  if [[ "$TERM_PROGRAM" = "iTerm.app" ]]; then
+    opt="TMUX_CC=yes"
+  else
+    opt="USE_TMUX=yes"
+  fi
+
+  [[ -n "$1" ]] && ssh $1 -t $opt /bin/bash
+}

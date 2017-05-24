@@ -3,7 +3,7 @@
 . "$DOTPATH"/etc/lib/util.sh
 
 # is_ssh_running && exit
-if is_ssh_running; then
+if [ "$TMUX_CC" = yes ]; then
   TMUX_COMMAND="tmux -CC"
 else
   TMUX_COMMAND="tmux"
