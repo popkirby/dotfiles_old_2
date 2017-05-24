@@ -22,7 +22,7 @@ export ENHANCD_FILTER="fzf:$ENHANCD_FILTER"
 [[ -n $SteamAppUser ]] && return
 
 # automatically attach tmux session
-$DOTPATH/bin/tmuxx
+#$DOTPATH/bin/tmuxx
 
 if [[ -f ~/.zplug/init.zsh ]]; then
   export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
