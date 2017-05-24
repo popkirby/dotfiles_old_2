@@ -3,6 +3,11 @@
 . "$DOTPATH"/etc/lib/util.sh
 
 # is_ssh_running && exit
+if is_ssh_running; then
+  TMUX_COMMAND="tmux -CC"
+else
+  TMUX_COMMAND="tmux"
+fi
 
 if is_screen_or_tmux_running; then
   if is_tmux_running; then
@@ -21,13 +26,13 @@ if ! is_tsubame; then
       echo -n "Tmux: attach? (y/N num/session-name) "
       read
       if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == '' ]]; then
-        tmux attach-session
+        $TMUX_COMMAND attach-session
         if [ $? -eq 0 ]; then
           echo "$(tmux -V) attached session"
           exit
         fi
       elif tmux list-sessions | grep -q "^$REPLY:"; then
-        tmux attach -t "$REPLY"
+        $TMUX_COMMAND attach -t "$REPLY"
         if [ $? -eq 0 ]; then
           echo "$(tmux -V) attached session"
           exit
@@ -41,7 +46,7 @@ if ! is_tsubame; then
       tmux_config=$(cat ~/.tmux.conf <(echo 'set-option -g default-command "reattach-to-user-namespace -l' $tmux_login_shell'"'))
       tmux -f <(echo "$tmux_config") new-session && echo "$(tmux -V) created new session supported OS X"
     else
-      tmux new-session && echo "tmux created new session"
+      $TMUX_COMMAND new-session && echo "tmux created new session"
     fi
   fi
 fi

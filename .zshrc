@@ -42,6 +42,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
+
 setopt prompt_subst
 
 if (which zprof > /dev/null); then
