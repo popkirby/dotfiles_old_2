@@ -28,14 +28,14 @@ if [[ -f ~/.zplug/init.zsh ]]; then
   export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
   source ~/.zplug/init.zsh
 
-  if ! zplug check --verbose; then
-    printf "Install zsh plugins? [y/N]: "
-    if read -q; then
-      echo; zplug install
-    else
-      echo
-    fi
-  fi
+#  if ! zplug check --verbose; then
+#    printf "Install zsh plugins? [y/N]: "
+#    if read -q; then
+#      echo; zplug install
+#    else
+#      echo
+#    fi
+#  fi
 
   zplug load
 fi
@@ -49,3 +49,11 @@ setopt prompt_subst
 if (which zprof > /dev/null); then
   zprof > ~/zsh.log
 fi
+
+if (which thefuck > /dev/null); then
+  eval "$(thefuck --alias)"
+fi
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/popkirby/.config/yarn/global/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/popkirby/.config/yarn/global/node_modules/tabtab/.completions/electron-forge.zsh
