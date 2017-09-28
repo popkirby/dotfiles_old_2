@@ -1,19 +1,5 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
-
-[[plugins]]
-repo = 'frankier/neovim-colors-solarized-truecolor-only'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = '''
+"--------------------------------------------------------------------------------
+" lightline.vim {{{1
 let g:lightline = {
       \ 'colorscheme' : 'chiery', 
       \ 'active' : {
@@ -58,30 +44,21 @@ function! MyFugitive()
   endif
   return ''
 endfunction
-'''
 
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'neomake/neomake'
-hook_add = '''
-autocmd MyAutoCmd BufWinEnter,BufWritePost * Neomake
-'''
+"--------------------------------------------------------------------------------
+" vim-anzu {{{1
+nmap n <Plug>(anzu-n)
+nmap N <Plug>(anzu-N)
+nmap * <Plug>(anzu-*)
+nmap # <Plug>(anzu-sharp)
+nmap <silent> <Esc><Esc> <Plug>(anzu-clear-search-status)<bar>:nohlsearch<CR>
 
-[[plugins]]
-repo = 'junegunn/fzf'
-build = './install --bin'
+"--------------------------------------------------------------------------------
+" accelerated-jk {{{1
+nmap <silent> j <Plug>(accelerated_jk_gj)
+nmap <silent> k <Plug>(accelerated_jk_gk)
 
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-hook_add = '''
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit' }
-'''
-
-[[plugins]]
-repo = 'justinmk/vim-dirvish'
+"--------------------------------------------------------------------------------
+" vim-jsx {{{1
+let g:jsx_ext_required = 0
