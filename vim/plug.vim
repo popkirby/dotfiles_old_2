@@ -16,5 +16,7 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'Shougo/context_filetype.vim'
+Plug 'osyo-manga/vim-precious'
 
 call plug#end()
