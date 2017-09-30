@@ -20,6 +20,7 @@ fi
 alias ll='ls -lh'
 alias la='ll -A'
 alias sl='ls'
+alias f='fuck'
 # }}}
 
 function mkdcd {
