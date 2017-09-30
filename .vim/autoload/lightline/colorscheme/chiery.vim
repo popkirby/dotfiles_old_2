@@ -7,43 +7,67 @@ let s:p = {
       \ 'tabline' : {}}
 
 " Pallete: {{{
-let s:light0 = '#f8ebe5'
-let s:light1 = '#f8dfd4'
+if &background == 'light'
+  let s:bg0 = '#f1f8e9'
+  let s:bg1 = '#dcedc8'
+  let s:bg2 = '#c5e1a5'
 
-let s:gray0 = '#c19580'
-let s:gray1 = '#dba891'
+  let s:gray0 = '#cfd8dc'
+  let s:gray1 = '#eceff1'
+  let s:gray2 = '#b0bec5'
 
-let s:dark0 = '#420500'
-let s:dark1 = '#835348'
+  let s:fg0 = '#263238'
+  let s:fg1 = '#37474f'
 
-let s:red = '#bc1c18'
-let s:yellow = '#d88c5a'
-let s:blue = '#268bd2'
-let s:blue2 = '#2c62a6'
-let s:green = '#657b33'
-let s:purple = '#b34dbb'
+  let s:red = '#f4511e'
+  let s:green = '#2e7d32'
+  let s:orange = '#ef6c00'
+  let s:blue = '#1565c0'
+  let s:blue2 = '#42a5f5'
+  let s:purple = '#6a1b9a'
+  let s:yellow = '#ff6f00'
+else
+  let s:bg0 = '#253238'
+  let s:bg1 = '#37474f'
+  let s:bg2 = '#78909c'
+
+  let s:gray0 = '#cfd8dc'
+  let s:gray1 = '#eceff1'
+  let s:gray2 = '#b0bec5'
+
+  let s:fg0 = '#f1f8e9'
+  let s:fg1 = '#e8f5e9'
+
+  let s:red = '#f48fb1'
+  let s:green = '#a5d8a7'
+  let s:orange = '#ffcc80'
+  let s:blue = '#81d4fa'
+  let s:blue2 = '#5c6bc0'
+  let s:purple = '#ce93d8'
+  let s:yellow = '#fdd835'
+endif
 " }}}
 
-let s:p.normal.middle = [ [s:dark1, s:light1, 0, 0] ]
-let s:p.normal.left   = [ [s:light0, s:green, 0, 0],
-                        \ [s:light1, s:dark1, 0, 0] ]
-let s:p.normal.right  = [ [s:light1, s:dark1, 0, 0],
-                        \ [s:light1, s:dark1, 0, 0] ]
+let s:p.normal.middle = [ [s:fg1, s:bg1, 0, 0] ]
+let s:p.normal.left   = [ [s:bg0, s:green, 0, 0],
+                        \ [s:fg1, s:bg2, 0, 0] ]
+let s:p.normal.right  = [ [s:bg1, s:fg1, 0, 0],
+                        \ [s:bg1, s:fg1, 0, 0] ]
 
-let s:p.inactive.middle = [ [s:dark1, s:light1, 0, 0] ]
-let s:p.inactive.left   = [ [s:dark1, s:light1, 0, 0],
-                          \ [s:dark1, s:light1, 0, 0] ]
-let s:p.inactive.right  = [ [s:dark1, s:light1, 0, 0],
-                          \ [s:dark1, s:light1, 0, 0] ]
+let s:p.inactive.middle = [ [s:fg1, s:bg1, 0, 0] ]
+let s:p.inactive.left   = [ [s:fg1, s:bg1, 0, 0],
+                          \ [s:fg1, s:bg1, 0, 0] ]
+let s:p.inactive.right  = [ [s:fg1, s:bg1, 0, 0],
+                          \ [s:fg1, s:bg1, 0, 0] ]
 
-let s:p.insert.left = [ [s:light0, s:blue, 0, 0],
+let s:p.insert.left = [ [s:bg0, s:blue, 0, 0],
                       \ s:p.normal.left[1]]
-let s:p.replace.left = [ [s:light0, s:red, 0, 0],
+let s:p.replace.left = [ [s:bg0, s:red, 0, 0],
                       \ s:p.normal.left[1]]
-let s:p.visual.left = [ [s:light0, s:yellow, 0, 0],
+let s:p.visual.left = [ [s:bg0, s:yellow, 0, 0],
                       \ s:p.normal.left[1]]
 
-let s:p.normal.error = [ [s:light0, s:red, 0, 0] ]
-let s:p.normal.warning = [ [s:light0, s:yellow, 0, 0] ]
+let s:p.normal.error = [ [s:bg0, s:red, 0, 0] ]
+let s:p.normal.warning = [ [s:bg0, s:yellow, 0, 0] ]
 
 let g:lightline#colorscheme#chiery#palette = s:p

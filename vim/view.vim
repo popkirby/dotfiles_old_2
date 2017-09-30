@@ -70,7 +70,7 @@ set colorcolumn=100
 set noshowmode
 
 " syntax
-set background=light
+set background=dark
 set termguicolors
 
 " disable Background Color Erase so that tmux can render colorschemes properly
