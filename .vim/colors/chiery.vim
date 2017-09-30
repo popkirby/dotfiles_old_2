@@ -33,7 +33,7 @@ if &background == 'light'
 else
   let s:bg0 = '#253238'
   let s:bg1 = '#37474f'
-  let s:bg2 = '#c5e1a5'
+  let s:bg2 = '#455a64'
 
   let s:gray0 = '#78909c'
   let s:gray1 = '#eceff1'

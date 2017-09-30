@@ -88,14 +88,5 @@ colorscheme chiery
 
 syntax enable
 
-" no underline for CursorLine
-hi! CursorLine cterm=none
-
-" search result
-hi! Search cterm=reverse
-
-" Visual
-hi! Visual cterm=reverse
-
 let macvim_skip_colorscheme=1
 let macvim_skip_cmd_opt_movement=1
