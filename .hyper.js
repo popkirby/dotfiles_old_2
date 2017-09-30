@@ -6,16 +6,16 @@ module.exports = {
   config: {
     // Choose either "stable" for receiving highly polished,
     // or "canary" for less polished but more frequent updates
-    updateChannel: 'stable',
+    updateChannel: 'canary',
 
     // default font size in pixels for all tabs
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Hack, monospace',
+    fontFamily: '"Fira Code", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgba(101,123,131,0.8)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
@@ -24,10 +24,10 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#dcedc8',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#253238',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -37,7 +37,6 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      x-screen x-row,
       .xterm-rows > div {
         font-variant-ligatures: initial;
       }
