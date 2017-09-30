@@ -18,5 +18,6 @@ Plug 'majutsushi/tagbar'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'osyo-manga/vim-precious'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()

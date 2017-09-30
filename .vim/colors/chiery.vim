@@ -55,7 +55,7 @@ let s:none = 'NONE'
 
 " }}}
 
-" Highbg Func: {{{
+" Highlight Func: {{{
 " s:HL(group, guifg, guibg, gui, guisp
 function! s:HL(group, fg, ...)
   let fg = a:fg
