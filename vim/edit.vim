@@ -85,3 +85,7 @@ else
         \ if has('gui_running') | source $MYGVIMRC | echo "source $MYGVIMRC"
 endif
 
+if $TERM_PROGRAM == "Hyper"
+  set t_RV=
+endif
+

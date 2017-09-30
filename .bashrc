@@ -3,7 +3,6 @@ case $- in
     *) return;;
 esac
 
-. ~/.bash_profile
 . ~/.path
 
 if [ "$TMUX_CC" = yes ] || [ "$USE_TMUX" = yes ]; then
