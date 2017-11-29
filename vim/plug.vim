@@ -5,6 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'osyo-manga/vim-anzu'
 Plug 'rhysd/accelerated-jk'
@@ -19,5 +20,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'osyo-manga/vim-precious'
 Plug 'scrooloose/nerdtree'
+Plug 'lervag/vimtex', { 'for': 'tex' }
 
 call plug#end()
