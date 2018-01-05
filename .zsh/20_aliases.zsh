@@ -23,6 +23,8 @@ alias sl='ls'
 alias f='fuck'
 # }}}
 
+alias wineja='LC_ALL=ja_JP.UTF-8 wine'
+
 function mkdcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }

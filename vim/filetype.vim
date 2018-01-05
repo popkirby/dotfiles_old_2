@@ -5,6 +5,7 @@
 " TeX
 autocmd FileType plaintex setlocal filetype=tex
 autocmd FileType tex setlocal conceallevel=0
+let g:vimtex_viewer_general = 'skim'
 
 " Go
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=0 noexpandtab

@@ -86,7 +86,8 @@ endif
 " colorscheme solarized
 colorscheme chiery
 
-syntax enable
-
 let macvim_skip_colorscheme=1
 let macvim_skip_cmd_opt_movement=1
+let no_gvimrc_example=1
+
+syntax enable

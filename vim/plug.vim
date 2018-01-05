@@ -12,7 +12,6 @@ Plug 'rhysd/accelerated-jk'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'which npm && npm install' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
@@ -21,5 +20,13 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'osyo-manga/vim-precious'
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex', { 'for': 'tex' }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
