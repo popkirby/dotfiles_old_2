@@ -3,6 +3,8 @@ if &compatible
   set nocompatible
 endif
 
+set pyxversion=3
+
 let g:vimdir = fnamemodify(resolve(expand('<sfile>')), ':h')
 function! s:source_rc(path)
   execute 'source' . g:vimdir . '/' . a:path

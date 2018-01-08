@@ -5,7 +5,13 @@
 " TeX
 autocmd FileType plaintex setlocal filetype=tex
 autocmd FileType tex setlocal conceallevel=0
-let g:vimtex_viewer_general = 'skim'
+let g:vimtex_view_method = 'skim'
+
+if !exists('g:vimtex_compiler_latexmk')
+  let g:vimtex_compiler_latexmk = {}
+endif
+
+let g:vimtex_compiler_latexmk.callback = 0
 
 " Go
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=0 noexpandtab
@@ -42,6 +48,6 @@ endfunction
 let g:vimtex_disable_version_warning = 1
 
 augroup MyAutoCmd
-  autocmd BufWritePre *.tex %s/。/．/ge
-  autocmd BufWritePre *.tex %s/、/，/ge
+  autocmd BufWritePre *.tex silent! %s/。/．/ge
+  autocmd BufWritePre *.tex silent! %s/、/，/ge
 augroup END
