@@ -20,6 +20,8 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'osyo-manga/vim-precious'
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
