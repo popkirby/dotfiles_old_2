@@ -51,3 +51,22 @@ function s {
 
   [[ -n "$1" ]] && ssh $1 -t $opt /bin/bash
 }
+
+function vg {
+  local file
+  file=$(rg --no-heading -n $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')
+
+  if [[ -n $file ]]
+  then
+    vim $(echo $file)
+  fi
+}
+
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+function fe {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
